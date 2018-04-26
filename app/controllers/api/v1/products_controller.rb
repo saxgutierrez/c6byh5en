@@ -4,6 +4,7 @@ module Api
         	
         	def index
         	  @products = Product.all
+              render json: @products
         	end
 
         	def new
