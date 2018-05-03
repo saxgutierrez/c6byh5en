@@ -1,8 +1,8 @@
 module Api
     module V1
         class ProductsController < ApplicationController
-            protect_from_forgery with: :null_session
-            skip_before_action :verify_authenticity_token
+            #protect_from_forgery with: :null_session
+            skip_before_filter :verify_authenticity_token
         	
         	def index
         	  @products = Product.all
