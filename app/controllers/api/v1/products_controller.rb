@@ -2,6 +2,7 @@ module Api
     module V1
         class ProductsController < ApplicationController
             protect_from_forgery with: :null_session
+            skip_before_filter :verify_authenticity_token
         	
         	def index
         	  @products = Product.all
@@ -28,6 +29,12 @@ module Api
         	def update
         	  @product = Product.update(params[:id], product_params)
         	end
+
+            def destroy
+              @product = Product.find(params[:id])
+              @product.destroy
+              head :no_content
+            end
 
         	private
         	  def product_params
