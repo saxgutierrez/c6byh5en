@@ -27,7 +27,7 @@ gem 'tzinfo-data'
 
 gem 'active_model_serializers', '~> 0.10.0'
 
-#gem 'rails-api'
+gem 'httparty'
 
 
 
