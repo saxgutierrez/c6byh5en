@@ -22,10 +22,6 @@ module Api
               end
         	end
 
-        	#def edit
-        	 # @product = Product.find(params[:id])
-        	#end
-
         	def update
               @product = Product.find(params[:id])
         	  if @product.update(product_params)
@@ -48,7 +44,6 @@ module Api
         	  def product_params
         	    params.require(:product).permit(:name, :price)
         	  end
-
         end
     end
 end
