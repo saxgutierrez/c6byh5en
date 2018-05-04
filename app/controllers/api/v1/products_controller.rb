@@ -38,8 +38,8 @@ module Api
             def destroy
                @product = Product.find(params[:id])
                @product.destroy
-               render json: @product, status: 204
-               head :no_content
+               render json: status: 204
+               #head :no_content
             end
 
         	private
