@@ -1,8 +1,8 @@
 module Api
     module V1
         class ProductsController < ApplicationController
-            #protect_from_forgery with: :null_session
-            skip_before_action :verify_authenticity_token
+            protect_from_forgery with: :null_session
+            #skip_before_action :verify_authenticity_token
         	
         	def index
         	  @products = Product.all
@@ -31,7 +31,7 @@ module Api
         	  if @product.update(product_params)
               render json: @product, status: 200
               else
-              render json: { errors: @product.errors }, status: 422
+              render json: {errors: @product.errors}, status: 422
               end
         	end
 
